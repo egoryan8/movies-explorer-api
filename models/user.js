@@ -1,8 +1,8 @@
 const db = require('mongoose');
 const bcrypt = require('bcrypt');
 const validator = require('validator');
-const UnauthorizedError = require('../errorClasses/unauthorizedError');
-const { INCORRECT_CREDENTIALS_MESSAGE } = require('../utills/constants');
+const UnauthorizedError = require('../utils/errorClasses/unauthorizedError');
+const { INCORRECT_CREDENTIALS_MESSAGE } = require('../utils/constants');
 
 const userSchema = new db.Schema({
   name: {
