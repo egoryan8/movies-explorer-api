@@ -10,7 +10,7 @@ const {
   REMOVE_NOT_OWN_FILM_MESSAGE,
 } = require('../utils/constants');
 
-module.exports.getSavedMovies = (req, res, next) => {
+module.exports.getMovies = (req, res, next) => {
   Movie.find({ owner: req.user._id })
     .then((films) => res.send(films))
     .catch(next);
@@ -37,7 +37,7 @@ module.exports.createMovie = (req, res, next) => {
     });
 };
 
-module.exports.removeMovieFromSaved = (req, res, next) => {
+module.exports.deleteMovie = (req, res, next) => {
   Movie.findById(req.params.id)
     .then((movie) => {
       if (!movie) {

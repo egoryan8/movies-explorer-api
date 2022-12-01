@@ -6,7 +6,7 @@ const ConflictError = require('../utils/errorClasses/conflictError');
 const { DOUBLE_EMAIL_MESSAGE } = require('../utils/constants');
 const getJWT = require('../utils/getJWT');
 
-module.exports.createUser = async (req, res, next) => {
+module.exports.register = async (req, res, next) => {
   try {
     const {
       name, email, password,
