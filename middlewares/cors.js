@@ -1,6 +1,6 @@
 const allowedCors = [
-  'https://fogel.nomoredomains.icu',
-  'http://fogel.nomoredomains.icu',
+  'https://fogel.movies.nomoredomains.club',
+  'http://fogel.movies.nomoredomains.club',
   'https://localhost:3000',
   'http://localhost:3000',
 ];
