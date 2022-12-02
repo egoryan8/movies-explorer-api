@@ -6,8 +6,8 @@ const NotFoundError = require('../utils/errorClasses/notFoundError');
 const { login, register } = require('../controllers/user');
 const { validateLogin, validateRegistration } = require('../utils/validators/userValidator');
 
-router.post('/signin', validateLogin, login);
 router.post('/signup', validateRegistration, register);
+router.post('/signin', validateLogin, login);
 router.use(auth);
 router.use(usersRouter);
 router.use(moviesRouter);

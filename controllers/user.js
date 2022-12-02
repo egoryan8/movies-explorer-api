@@ -4,14 +4,13 @@ const User = require('../models/user');
 const BadRequestError = require('../utils/errorClasses/badRequestError');
 const ConflictError = require('../utils/errorClasses/conflictError');
 const { DOUBLE_EMAIL_MESSAGE } = require('../utils/constants');
-const getJWT = require('../utils/getJWT');
+const { getJWT } = require('../utils/getJWT');
 
 module.exports.register = async (req, res, next) => {
   try {
     const {
       name, email, password,
     } = req.body;
-
     const hash = await bcrypt.hash(password, 10);
     const user = await User.create({
       name,
@@ -33,7 +32,7 @@ module.exports.register = async (req, res, next) => {
 module.exports.login = async (req, res, next) => {
   try {
     const { email, password } = req.body;
-    const user = await User.checkUser(email, password);
+    const user = await User.findUserByCredentials(email, password);
     const key = getJWT();
     const token = jwt.sign({ _id: user._id }, key, { expiresIn: '7d' });
     res.send({

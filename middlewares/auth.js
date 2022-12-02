@@ -6,7 +6,7 @@ const UnauthorizedError = require('../utils/errorClasses/unauthorizedError');
 module.exports = (req, res, next) => {
   let payload;
   try {
-    const token = req.headers.authorization.split(' ')[1];
+    const token = req.headers.authorization;
     if (!token) {
       return next(new UnauthorizedError('Нужно авторизоваться!'));
     }
