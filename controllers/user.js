@@ -3,7 +3,7 @@ const jwt = require('jsonwebtoken');
 const User = require('../models/user');
 const BadRequestError = require('../utils/errorClasses/badRequestError');
 const ConflictError = require('../utils/errorClasses/conflictError');
-const { DOUBLE_EMAIL_MESSAGE, INVALID_DATA_MESSAGE} = require('../utils/constants');
+const { DOUBLE_EMAIL_MESSAGE, INVALID_DATA_MESSAGE } = require('../utils/constants');
 const { getJWT } = require('../utils/getJWT');
 
 module.exports.register = async (req, res, next) => {

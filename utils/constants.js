@@ -12,5 +12,5 @@ module.exports.AUTH_REQUIRED_MESSAGE = 'Нужно авторизоваться!
 module.exports.INCORRECT_CREDENTIALS_MESSAGE = 'Неправильная почта или пароль';
 module.exports.INVALID_DATA_MESSAGE = 'Переданы невалидные данные';
 
-module.exports.NOT_FOUND_MESSAGE = 'Запрашиваемый URL не найден. Проверьте адрес и метод запроса'
+module.exports.NOT_FOUND_MESSAGE = 'Запрашиваемый URL не найден. Проверьте адрес и метод запроса';
 module.exports.INTERNAL_SERVER_ERROR_MESSAGE = 'Ошибка сервера';

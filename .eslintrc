@@ -10,6 +10,9 @@
     "ecmaVersion": "latest"
   },
   "rules": {
+    "no-unused-vars": "warn",
+    "consistent-return": "off",
+    "no-console": "off",
     "no-underscore-dangle": [
       "error",
       {
