@@ -5,6 +5,7 @@ const auth = require('../middlewares/auth');
 const NotFoundError = require('../utils/errorClasses/notFoundError');
 const { login, register } = require('../controllers/user');
 const { validateLogin, validateRegistration } = require('../utils/validators/userValidator');
+const {NOT_FOUND_MESSAGE} = require("../utils/constants");
 
 router.post('/signup', validateRegistration, register);
 router.post('/signin', validateLogin, login);
@@ -13,7 +14,7 @@ router.use(usersRouter);
 router.use(moviesRouter);
 
 router.use(() => {
-  throw new NotFoundError('Запрашиваемый URL не найден. Проверьте адрес и метод запроса');
+  throw new NotFoundError(NOT_FOUND_MESSAGE);
 });
 
 module.exports = router;

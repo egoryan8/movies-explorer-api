@@ -1,5 +1,3 @@
-require('dotenv').config();
-
 const { NODE_ENV, PORT, MONGO_DB } = process.env;
 
 module.exports.PORT_SETTING = NODE_ENV === 'production' ? PORT : 3001;

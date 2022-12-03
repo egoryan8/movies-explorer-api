@@ -8,7 +8,9 @@ module.exports.REMOVE_NOT_OWN_FILM_MESSAGE = 'Вы пытаетесь удали
 
 module.exports.LOGOUT_MESSAGE = 'Вы вышли из аккаунта';
 module.exports.DOUBLE_EMAIL_MESSAGE = 'Пользователь с данным email уже зарегестрирован';
-module.exports.AUTH_REQUIRED_MESSAGE = 'Необходима авторизация';
+module.exports.AUTH_REQUIRED_MESSAGE = 'Нужно авторизоваться!';
 module.exports.INCORRECT_CREDENTIALS_MESSAGE = 'Неправильная почта или пароль';
+module.exports.INVALID_DATA_MESSAGE = 'Переданы невалидные данные';
 
+module.exports.NOT_FOUND_MESSAGE = 'Запрашиваемый URL не найден. Проверьте адрес и метод запроса'
 module.exports.INTERNAL_SERVER_ERROR_MESSAGE = 'Ошибка сервера';

@@ -3,7 +3,7 @@ const jwt = require('jsonwebtoken');
 const User = require('../models/user');
 const BadRequestError = require('../utils/errorClasses/badRequestError');
 const ConflictError = require('../utils/errorClasses/conflictError');
-const { DOUBLE_EMAIL_MESSAGE } = require('../utils/constants');
+const { DOUBLE_EMAIL_MESSAGE, INVALID_DATA_MESSAGE} = require('../utils/constants');
 const { getJWT } = require('../utils/getJWT');
 
 module.exports.register = async (req, res, next) => {
@@ -22,7 +22,7 @@ module.exports.register = async (req, res, next) => {
     if (e.code === 11000) {
       next(new ConflictError(DOUBLE_EMAIL_MESSAGE));
     } else if (e.name === 'CastError') {
-      next(new BadRequestError('Переданы невалидные данные'));
+      next(new BadRequestError(INVALID_DATA_MESSAGE));
     } else {
       next(e);
     }

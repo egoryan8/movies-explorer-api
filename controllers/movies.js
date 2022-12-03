@@ -45,7 +45,7 @@ module.exports.deleteMovie = async (req, res, next) => {
     if (movie.owner.toString() !== req.user._id) {
       throw new ForbiddenError(REMOVE_NOT_OWN_FILM_MESSAGE);
     }
-    movie.delete();
+    await movie.delete();
     res.send({ message: SUCCESS_REMOVE_FILM_MESSAGE });
   } catch (err) {
     if (err.name === 'CastError') {
